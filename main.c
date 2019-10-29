@@ -17,11 +17,12 @@ int main(){
         printf("len_list[%d]=%f\n",j,temp_node->data);
         temp_node = (ptr_node)temp_node->next;
     }
+    printf("head:%f;tail:%f\n",list->head->data,list->tail->data);
 
     printf("**********this is just split line**********\n");
 
-    list_append(list,1230);
-    list_append(list,568);
+    list_append(list,300);
+    list_append(list,400);
 
     len_list = list->len;
     printf("len_list:%d\n",len_list);
@@ -30,8 +31,25 @@ int main(){
         printf("len_list[%d]=%f\n",j,temp_node->data);
         temp_node = (ptr_node)temp_node->next;
     }
+    printf("head:%f;tail:%f\n",list->head->data,list->tail->data);
+    printf("**********this is just split line**********\n");
+
+    list_left_append(list,100);
+    list_left_append(list,200);
+
+    len_list = list->len;
+    printf("len_list:%d\n",len_list);
+    temp_node = list->head;
+    for(int j=0;j<len_list;j++){
+        printf("len_list[%d]=%f\n",j,temp_node->data);
+        temp_node = (ptr_node)temp_node->next;
+    }
+    printf("head:%f;tail:%f\n",list->head->data,list->tail->data);
 
     list_free(list);
+
+    char c1 = (char)(1);
+    printf("c1:%d\n",(int)(c1));
 
     return 0;
 }

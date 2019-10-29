@@ -37,4 +37,22 @@ void list_append(ptr_linkedList list,float data){
     }
 }
 
+void list_left_append(ptr_linkedList list,float data){
+    ptr_node new_node = (ptr_node)malloc(sizeof(node));
+    new_node->data = data;
+    new_node->next = NULL;
+    
+    new_node->next = (struct node*)list->head;
+    list->head = new_node;
+    if (list->tail == NULL){
+        list->tail = new_node;
+    }
+    (list->len)++;
+}
+
+
+bool list_is_empty(ptr_linkedList list){
+    return ((list->len) =0?True:False);
+
+}
 
